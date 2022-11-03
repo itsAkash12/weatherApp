@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <style>
+        .mapouter {
+        position: relative;
+        text-align: right;
+        height: 300px;
+        width: 800px;
+        margin-top: 30px;
+        padding:10px;
+        border-radius: 10px;
+        
+      }
+      .gmap_canvas {
+        overflow: hidden;
+        background: none !important;
+        height: 100%;
+        width: 100%;
+      }
+      #super{
+        width:95%;
+        margin: auto;
+        display:grid;
+        grid-template-columns: repeat(2,1fr);
+        gap:10px;
+        
+      }
+      #container{
+        width:85%;
+        height: auto;
+        /* padding:20px; */
+        margin-top: 35px;
+        
+      }
+      #container>div{
+        padding:20px;
+        width:100%;
+        border-radius: 10px;
+      }
+      #container>div>p:nth-child(4){
+        margin-top: -62px;
+        margin-left: 100px;
+        font-size: 60px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      #city{
+        width:280px;
+        height:30px;
+        border-radius: 20px;
+        padding:0px 30px;
+        margin-top: 40px;
+        margin-left: 90px;
+      }
+      button{
+        width:120px;
+        height:35px;
+        border-radius: 20px;
+        background-color: black;
+        color:white;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        
+      }
+      button:hover{
+        background-color: white;
+        color:black;
+      }
+      #container>div>h2{
+        color:rgb(218, 107, 60);
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 22px;
+        font-weight: bold;
+      }
+      #container>div>p,#bottom>div>p{
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 18px;
+        
+      }
+      #bottom{
+        width:90%;
+        margin: auto;
+        display:grid;
+        grid-template-columns: repeat(7,1fr);
+        gap:10px;
+        margin-top:20px;
+      }
+      #bottom>div{
+        border-radius: 10px;
+        text-align: center;
+        height: auto;
+      }
+      #navbar{
+        height:65px;
+        width:100%;
+        background-color: rgb(0, 115, 255);
+        color: whitesmoke;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 35px;
+        font-family:Arial, Helvetica, sans-serif;
+      }
+      #navbar>p{
+        font-size:small;
+        text-align: right;
+        font-family: URW Chancery L, cursive;
+      }
+      #bottom>div>p:nth-child(1){
+        font-size: 25px;
+        color:blueviolet;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbar">
+      Weather App
+      <p>-Akash Singh</p>
+    </div>
+    <input id="city" type="text" placeholder="Enter City Name" />
+    <button onclick="getWeather()">Search</button>
+    <div id="super">
+        <div id="container">
+        
+        </div>
+        <div class="mapouter">
+            <div class="gmap_canvas">
+              <iframe
+                width="100%"
+                height="100%"
+                id="gmap_canvas"
+                frameborder="0"
+                scrolling="no"
+                marginheight="0"
+                marginwidth="0"
+              ></iframe>
+            </div>
+          </div>
+    </div>
+    <div id="bottom">
+    </div>
+  </body>
+</html>
+<script src="index.js"></script>
+
+
